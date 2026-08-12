@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Outfit ;
+}
+
+:root{
+    --cor--primaria: #2C221E ;
+    --cor--secundaria: #1E293B;
+    --preto: #1A1A1A;
+    --cinza: #E0E0E0;
+    --corbotao01: #22C55E; 
+    --corbotao02: #EF4444;
+}
+
+
+
+

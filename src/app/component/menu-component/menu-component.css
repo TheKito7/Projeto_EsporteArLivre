@@ -1,0 +1,48 @@
+#cabecalho, #logo, #menu-ul{
+display: flex;
+align-items: center;
+}
+
+#logo, #menu-ul{
+    justify-content: center;
+}
+#cabecalho{
+background-color: var(--cor--secundaria);
+    width: 100px;
+    height: 150px;
+    margin: 20px auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+#logo{
+    width: 200px;
+    height: 150px;
+    color: white;
+    
+}
+
+#menu-ul{
+    background-color: rgb(135, 145, 145);
+    width: 790px;
+    height: 150px;
+    justify-content: right;
+}
+
+.lnk-menu{
+    text-decoration: none;
+    padding: 0px 20px;
+    font-size: 16px;
+ color: var(--cor--secundaria);
+
+}
+
+
+
+
+
+
+
