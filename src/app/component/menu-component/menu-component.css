@@ -1,48 +1,54 @@
-#cabecalho, #logo, #menu-ul{
-display: flex;
-align-items: center;
-}
-
-#logo, #menu-ul{
-    justify-content: center;
-}
-#cabecalho{
-background-color: var(--cor--secundaria);
-    width: 100px;
-    height: 150px;
-    margin: 20px auto;
-    padding: 15px;
+#cabecalho,
+#ul-menu,
+#logo {
     display: flex;
     align-items: center;
+}
+
+#ul-menu,
+#logo {
+    height: 100%;
+}
+
+#cabecalho {
+    width: 1000px;
+    height: 100px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: var(--cor-primaria);
     justify-content: space-between;
-
+    color: var(--branca);
 }
 
-#logo{
-    width: 200px;
-    height: 150px;
-    color: white;
-    
+#logo, #menu {
+    width: 30%;
+    font-size: 25px;
 }
 
-#menu-ul{
-    background-color: rgb(135, 145, 145);
-    width: 790px;
-    height: 150px;
+#titulo-logo {
+    color: var(--botao02);
+    border: 1px solid var(--botao02);
+    margin: 0px 10px;
+    padding: 0px 10px;
+}
+
+#menu{
+    width: 70%;
+}
+
+#ul-menu {
+    list-style: none;
     justify-content: right;
 }
 
-.lnk-menu{
+.lnk-menu {
+    color: var(--branca);
     text-decoration: none;
-    padding: 0px 20px;
-    font-size: 16px;
- color: var(--cor--secundaria);
-
+    margin: 0px 10px;
+    transition:  0.5s ease;
+    font-size: 20px;
 }
 
-
-
-
-
-
-
+.lnk-menu:hover{
+    opacity: 0.5;
+}
