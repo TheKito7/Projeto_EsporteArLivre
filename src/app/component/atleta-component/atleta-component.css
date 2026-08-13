@@ -1,93 +1,124 @@
-/* Configuração geral do fundo e da fonte */
+/* Configuração da página */
 body {
-    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px 20px;
+    margin: 0;
 }
 
-/* Caixa principal do formulário */
+/* Caixa branca do formulário (Largura da imagem) */
 #div-form {
     background: #ffffff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    max-width: 850px; /* Largura ideal para ficar esticado como na foto */
     width: 100%;
 }
 
-/* Organização das etiquetas (labels) e entradas de texto */
+/* Título */
+h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #1e293b;
+    font-size: 24px;
+}
+
+/* Formatação dos textos de ajuda */
 label {
     display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Estilo para todos os campos de texto */
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Garante que o preenchimento não passe do tamanho da caixa */
+    margin-bottom: 8px;
     font-size: 14px;
+    font-weight: 600;
+    color: #475569;
 }
 
-/* Efeito azul ao clicar em um campo */
-input[type="text"]:focus {
-    border-color: #007bff;
+/* Estilo para todos os campos de digitação e seleção */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #334155;
+    background-color: #ffffff;
+}
+
+/* Cor do texto de exemplo (Placeholder) */
+input::placeholder {
+    color: #94a3b8;
+}
+
+/* Mudança de cor ao clicar no campo */
+input:focus, select:focus {
+    border-color: #4f46e5;
     outline: none;
 }
 
-/* Ajuste para os botões de rádio (sexo) ficarem alinhados */
-input[type="radio"] {
-    margin: 15px 5px 10px 15px;
-    cursor: pointer;
+/* ESTRUTURA DE COLUNAS (O SEGREDO DO TAMANHO) */
+
+/* Linha com 2 campos iguais (50% / 50%) */
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-/* Primeira opção de sexo colada na esquerda */
-input[type="radio"]:first-of-type {
-    margin-left: 0;
+/* Linha com 3 campos (Bairro, Cidade e UF menor) */
+.linha-tripla {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr; /* O último campo fica menor */
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
-/* Área dos botões de enviar e limpar */
+/* Campo único */
+.campo-largo {
+    margin-bottom: 20px;
+}
+
+/* BOTÕES */
 #div-btn {
-    margin-top: 25px;
     display: flex;
-    gap: 15px; /* Espaço entre os botões */
+    gap: 15px;
+    margin-top: 30px;
 }
 
-/* Estilo comum dos botões */
-button {
-    flex: 1;
-    padding: 12px;
+/* Botão Azul de Cadastrar */
+#btnAdd {
+    background-color: #4f46e5; /* Azul moderno da imagem */
+    color: white;
+    padding: 12px 30px;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 6px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s;
 }
 
-/* Botão Cadastrar (Verde) */
-#btnAdd {
-    background-color: #28a745;
-    color: white;
+#btnCadastrar:hover {
+    background-color: #4338ca;
 }
 
-#btnAdd:hover {
-    background-color: #218838;
+/* Botão de Limpar discreto */
+#btnLimp {
+    background-color: red;
+    color: black;
+    padding: 12px 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-/* Botão Limpar (Cinza claro) */
-button[type="reset"] {
-    background-color: #e2e8f0;
-    color: #4a5568;
-}
-
-button[type="reset"]:hover {
-    background-color: #cbd5e1;
+#btnLimpar:hover {
+    background-color: #f1f5f9;
+    color: #334155;
 }
