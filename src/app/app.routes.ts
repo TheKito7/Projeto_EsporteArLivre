@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 
 import { HomeComponent } from './component/home-component/home-component';
 import { AtletaComponent } from './component/atleta-component/atleta-component';
+import { Component } from '../../node_modules/@angular/core/types/_debug_node-chunk';
+
+import { CorridaComponent } from './component/corrida-component/corrida-component';
 
 export const routes: Routes = [
     {
@@ -16,6 +19,10 @@ export const routes: Routes = [
     {
         path:"cadastroAtleta",
         component: AtletaComponent,
+    },
+    {
+        path:"cadastroCorrida",
+        component: CorridaComponent
     }
 
 ];
