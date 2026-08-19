@@ -43,23 +43,35 @@ export class AtletaComponent {
     this.uf = ''
   }
 
-  salvar(){
-    const atleta = new Atleta()
-    atleta.nome = this.nome
-    atleta.cpf = this.cpf
-    atleta.sexo = this.sexo
-    atleta.cep = this.cep
-    atleta.ruaLogradouro = this.ruaLogradouro
-    atleta.bairro = this.bairro
-    atleta.cidade = this.cidade
-    atleta.uf  = this.uf
+  salvar() {
+    const atleta = new Atleta();
+    atleta.nome = this.nome;
+    atleta.cpf = this.cpf;
+    atleta.sexo = this.sexo;
+    atleta.cep = this.cep;
+    atleta.ruaLogradouro = this.ruaLogradouro;
+    atleta.bairro = this.bairro;
+    atleta.cidade = this.cidade;
+    atleta.uf  = this.uf;
     
-    this.atletaService.adicionarAtleta(atleta)
-    
-    this.limparDados()   
-
-    this.atletaService.listarAtletas()
-    
+    // 2. Colocamos o .subscribe() para disparar a requisição
+    this.atletaService.salvarAtleta(atleta).subscribe({
+      next: (respostaDaApi) => {
+        // O que acontece quando dá certo:
+        console.log('Atleta salvo com sucesso na MockAPI!', respostaDaApi);
+        this.limparDados(); 
+        
+       
+        this.atletaService.listarAtletas().subscribe(listaAtualizada => {
+          console.log('Lista atualizada:', listaAtualizada);
+          // Aqui você atualizaria a variável de tela que mostra a tabela, se tiver uma.
+        });
+      },
+      error: (erroDaApi) => {
+        // O que acontece se der erro (ex: internet caiu, API fora do ar)
+        console.error('Erro ao tentar salvar o atleta:', erroDaApi);
+      }
+    });
   }
 
 
